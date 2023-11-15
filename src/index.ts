@@ -6,13 +6,22 @@
 
 
 /**
- * This is an example function
- * It returns the n-th fibonacci number
- * @param n The n-th fibonacci number to return
- * @returns The n-th fibonacci number
+ * Executes only the last call of a function within a given delay.
+ * @param func The function to debounce.
+ * @param delay The delay in milliseconds.
+ * @returns A function that can be called to execute the debounced function.
  */
-export function fib(n: number): number {
-    if (n < 2)
-        return n;
-    return fib(n - 1) + fib(n - 2);
-}
+export function debounce<T extends (...args: any[]) => any>(
+    func: T,
+    delay: number
+  ): (...args: Parameters<T>) => void {
+    let timeoutId: NodeJS.Timeout;
+  
+    return function (...args: Parameters<T>): void {
+      clearTimeout(timeoutId);
+  
+      timeoutId = setTimeout(() => {
+        func(...args);
+      }, delay);
+    };
+  }
