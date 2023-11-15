@@ -25,3 +25,15 @@ debouncedFunction();
 
  - `func`: The original function you want to debounce.
  - `delay`: The delay time in milliseconds.
+
+## Installation
+
+1. Create .npmrc file with the following content:
+```
+@garmingo:registry=https://npm.pkg.github.com
+```
+
+2. Install using npm
+```
+npm i @garmingo/debounce
+```
