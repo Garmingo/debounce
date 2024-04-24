@@ -1,5 +1,5 @@
 /*
- *   Copyright (c) 2023 Garmingo
+ *   Copyright (c) 2024 Garmingo
  *   All rights reserved.
  *   Unauthorized use, reproduction, and distribution of this source code is strictly prohibited.
  */
